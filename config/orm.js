@@ -14,9 +14,7 @@ const orm = {
     }
 };
 
-// orm.selectAll("burgers", data => {
-//     console.log(data);
-// });
+// orm.selectAll("burgers", data => console.log(data));
 
-// Exports the orm for the model
+// Exports the orm for the model to use
 module.exports = orm;

@@ -2,10 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Imports the model to use its database functions.
 const burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// Routes
 router.get("/", (req, res) => {
   burger.selectAll(data => {
     const object = {
@@ -16,5 +16,5 @@ router.get("/", (req, res) => {
   });
 });
 
-// Export routes for server.js to use.
+// Export routes for server to use
 module.exports = router;

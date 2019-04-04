@@ -8,7 +8,7 @@ const burger = {
     }
 };
 
-burger.selectAll(data => console.log(data));
+// burger.selectAll(data => console.log(data));
 
 // Exports burger for the controller to use
 module.exports = burger;
