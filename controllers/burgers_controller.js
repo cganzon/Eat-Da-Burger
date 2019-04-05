@@ -7,7 +7,7 @@ const burger = require("../models/burger.js");
 
 // Routes
 router.get("/", (req, res) => {
-  burger.all(data => {
+  burger.selectAll(data => {
     const hbsObject = {
       burgers: data
     };
@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  burger.create(["burger_name", "devoured"], [req.body.burger_name, 0], result => {
+  burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, 0], result => {
     // Send back the ID of the new quote
     res.json(result);
   });
@@ -26,7 +26,7 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
   const condition = "id = " + req.params.id;
 
-  burger.update(req.body, condition, result => {
+  burger.updateOne(req.body, condition, result => {
       if (result.changedRows === 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
